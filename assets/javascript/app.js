@@ -1,9 +1,11 @@
-$("#").on("click", function() {
-	var search = $(this).attr("data-name")
+$("#search").on("click", function(event) {
+	event.preventDefault();
+	var search = $("#icon_prefix").val().trim()
+	console.log(search)
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=" + search,
+		"url": "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=" + search + "",
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
@@ -12,18 +14,18 @@ $("#").on("click", function() {
 	}
 	
 	$.ajax(settings).then(function (response) {
-		console.log(response);
+		// console.log(response);
 		var results = response.list
-		console.log(results)
-		var definitionDiv = $("<div>")
-		var definition = results[0].definition
+		// console.log(results)
+		// var definitionDiv = $("<div>")
+		var definitionWord = results[0].definition
 		console.log(definition)
-		var sounds = results[0].sound_urls[0]
-		console.log(sounds)
+		// var sounds = results[0].sound_urls[0]
+		// console.log(sounds)
 	});
-	definitionDiv.append(sounds)
-	definitionDiv.append(definition)
-	$("#").append(definitionDiv)
+	// definitionDiv.append(sounds)
+	// definitionDiv.append(definition)
+	$("#urban").append(definitionWord)
 })
 	
 
