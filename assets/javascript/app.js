@@ -1,4 +1,5 @@
 $("#search").on("click", function(event) {
+	$("#urban").empty()
 	event.preventDefault();
 	var search = $("#icon_prefix").val().trim()
 	console.log(search)
@@ -16,17 +17,17 @@ $("#search").on("click", function(event) {
 	$.ajax(settings).then(function (response) {
 		// console.log(response);
 		var results = response.list
-		// console.log(results)
-		// var definitionDiv = $("<div>")
+		console.log(results)
+		var definitionDiv = $("<div>")
 		var definitionWord = results[0].definition
-		console.log(definition)
-		// var sounds = results[0].sound_urls[0]
-		// console.log(sounds)
+		console.log(definitionWord)
+		var word = results[0].word
+		
+		definitionDiv.append("<h3>"  + word + "</h3>")
+		definitionDiv.append("<h5>" + definitionWord + "</h5>")
+		$("#urban").append(definitionDiv)
 	});
-	// definitionDiv.append(sounds)
-	// definitionDiv.append(definition)
-	$("#urban").append(definitionWord)
 })
-	
+
 
 
