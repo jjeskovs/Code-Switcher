@@ -27,7 +27,27 @@ $("#search").on("click", function(event) {
 		definitionDiv.append("<h5>" + definitionWord + "</h5>")
 		$("#urban").append(definitionDiv)
 	});
-})
+    
+        
+        var queryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + search + "?key=8195ff8d-4a15-4f1c-8c70-5206c6c680b8";
+        
+        
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            
+            var results = response;
+            var resultsDic = results[0].shortdef;
+            console.log(resultsDic);
 
+            $("#oxford").append(resultsDic);
+            
+        });
+        
+        
 
+        
 
+});
