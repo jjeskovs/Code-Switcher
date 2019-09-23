@@ -1,21 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text.css" href="assets/css/normalize.css">
-    <link rel="stylesheet" type="text.css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
 
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Code Switcher</h1>
+            <div class="row center">
+                <form id="search-form" class="col s12">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">search</i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Search</label>
+                    </div>
+                </form>
+            </div>
+
+            <br><br>
+
+        </div>
+    </div>
 
 
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card grey lighten-3">
+                        <div class="card-content">
+                            <span class="card-title">Oxford Dictionary</span>
+                            <p>-- Definition --</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card grey lighten-3">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x400">
+                            <span class="card-title">Giphy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card grey lighten-3">
+                        <div class="card-content">
+                            <span class="card-title">Urban Dictionary</span>
+                            <p>-- Definition --</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+    </div>
+
+    <footer class="page-footer grey lighten-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l9 s12">
+                    <h5 class="black-text">Team Information</h5>
+                    <p class="black-text text-lighten-4">--Information on Team--</p>
 
 
-
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="black-text">Recent Searches</h5>
+                    <ul>
+                        <li><a class="black-text" href="#!">Link 1</a></li>
+                        <li><a class="black-text" href="#!">Link 2</a></li>
+                        <li><a class="black-text" href="#!">Link 3</a></li>
+                        <li><a class="black-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container black-text">
+                Made by <span class="black-text text-lighten-3">--Team Names--</span>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
