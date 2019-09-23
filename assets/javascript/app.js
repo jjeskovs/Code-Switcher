@@ -16,17 +16,37 @@ $("#search").on("click", function(event) {
 	$.ajax(settings).then(function (response) {
 		// console.log(response);
 		var results = response.list
-		// console.log(results)
-		// var definitionDiv = $("<div>")
+		console.log(results)
+		var definitionDiv = $("<div>")
 		var definitionWord = results[0].definition
-		console.log(definition)
-		// var sounds = results[0].sound_urls[0]
-		// console.log(sounds)
+		console.log(definitionWord)
+		var word = results[0].word
+		
+		definitionDiv.append("<h3>"  + word + "</h3>")
+		definitionDiv.append("<h5>" + definitionWord + "</h5>")
+		$("#urban").append(definitionDiv)
 	});
-	// definitionDiv.append(sounds)
-	// definitionDiv.append(definition)
-	$("#urban").append(definitionWord)
-})
-	
+    
+        
+        var queryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + search + "?key=8195ff8d-4a15-4f1c-8c70-5206c6c680b8";
+        
+        
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            
+            var results = response;
+            var resultsDic = results[0].shortdef;
+            console.log(resultsDic);
 
+            $("#oxford").append(resultsDic);
+            
+        });
+        
+        
 
+        
+
+});
