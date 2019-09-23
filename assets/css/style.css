@@ -1,0 +1,17 @@
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+body {
+    background: #333;
+}
+
+#search-form {
+    background: #FFF;
+    padding: 15px;
+    border-radius: 3px;
+}
