@@ -1,7 +1,35 @@
+
+var firebaseConfig = {
+    apiKey: "AIzaSyBzTfRvgE9Wlw1oQt9wwhegSy0FWEwPlTc",
+    authDomain: "project1-afa8a.firebaseapp.com",
+    databaseURL: "https://project1-afa8a.firebaseio.com",
+    projectId: "project1-afa8a",
+    storageBucket: "",
+    messagingSenderId: "213587012879",
+    appId: "1:213587012879:web:b9adcee3d625c9acede27a"
+	};
+  // Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+var search = $("#icon_prefix").val().trim()
+
+
+$("#search").on("click", function(event){
+	event.preventDefault();
+	search = $("#icon_prefix").val().trim()
+	database.ref().push(search)
+	console.log(search)
+	})
+database.ref().on("child_added", function(snapshot) {
+
+})
+
+
+
 $("#search").on("click", function(event) {
 	$("#urban").empty()
 	event.preventDefault();
-	var search = $("#icon_prefix").val().trim()
+	search = $("#icon_prefix").val().trim()
 	console.log(search)
 	var settings = {
 		"async": true,
@@ -23,7 +51,7 @@ $("#search").on("click", function(event) {
 		console.log(definitionWord)
 		var word = results[0].word
 		
-		definitionDiv.append("<h3>"  + word + "</h3>")
+		definitionDiv.append("<h4>"  + word + "</h4>")
 		definitionDiv.append("<h5>" + definitionWord + "</h5>")
 		$("#urban").append(definitionDiv)
 	});
