@@ -1,4 +1,5 @@
 $("#search").on("click", function(event) {
+	$("#urban").empty()
 	event.preventDefault();
 	var search = $("#icon_prefix").val().trim()
 	console.log(search)
