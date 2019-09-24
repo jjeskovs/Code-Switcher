@@ -22,8 +22,13 @@ $("#search").on("click", function(event){
 })
 
 database.ref().limitToLast(5).on("child_added", function(snapshot){
-	console.log(snapshot.val())
+	// console.log(snapshot.val())
+	var recent = $("<li>" + snapshot.val() + "</li>").attr("class", "black-text")
+	$("#recent li:nth-child(5)").remove()
+	$("#recent").prepend(recent)
+	
 })
+
 
 
 
@@ -73,7 +78,25 @@ $("#search").on("click", function(event) {
 
             $("#oxford").append(resultsDic);
             
-        });
+		});
+		
+		var giphyUrl = "https://api.giphy.com/v1/gifs/search?api_key=psvs2Qwoq05mon9BeoB6OeULhaI6jdym&limit=1&q=" + search;
+	//$("#giphy-image").empty()
+
+	$.ajax({
+		url: giphyUrl,
+		method: "GET"
+	}).then(function (response) {
+		//console.log(response.data[0].images.fixed_height.url);
+		
+		var result = response.data;
+		var resultUrl = result[0].images.fixed_height.url;
+		// console.log(resultUrl);
+
+		$("#giphy-image").attr("src", resultUrl);
+
+
+	})
         
         
 
