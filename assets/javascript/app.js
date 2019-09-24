@@ -42,7 +42,7 @@ $("#search").on("click", function(event) {
 			"x-rapidapi-key": "2b790bbd2amshc926815e536ecbep1b9bb5jsn68a7524edf49"
 		}
 	}
-	
+
 	$.ajax(settings).then(function (response) {
 		// console.log(response);
 		var results = response.list
