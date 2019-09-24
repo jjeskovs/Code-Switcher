@@ -13,15 +13,16 @@ var firebaseConfig = {
 var database = firebase.database();
 var search = $("#icon_prefix").val().trim()
 
-
 $("#search").on("click", function(event){
 	event.preventDefault();
 	search = $("#icon_prefix").val().trim()
 	database.ref().push(search)
-	console.log(search)
-	})
-database.ref().on("child_added", function(snapshot) {
+	// wordArr.push(search)
+	// console.log(search)
+})
 
+database.ref().limitToLast(5).on("child_added", function(snapshot){
+	console.log(snapshot.val())
 })
 
 
@@ -30,7 +31,7 @@ $("#search").on("click", function(event) {
 	$("#urban").empty()
 	event.preventDefault();
 	search = $("#icon_prefix").val().trim()
-	console.log(search)
+	// console.log(search)
 	var settings = {
 		"async": true,
 		"crossDomain": true,
@@ -45,10 +46,10 @@ $("#search").on("click", function(event) {
 	$.ajax(settings).then(function (response) {
 		// console.log(response);
 		var results = response.list
-		console.log(results)
+		// console.log(results)
 		var definitionDiv = $("<div>")
 		var definitionWord = results[0].definition
-		console.log(definitionWord)
+		// console.log(definitionWord)
 		var word = results[0].word
 		
 		definitionDiv.append("<h4>"  + word + "</h4>")
@@ -64,11 +65,11 @@ $("#search").on("click", function(event) {
             url: queryURL,
             method: "GET"
         }).then(function(response) {
-            console.log(response);
+            // console.log(response);
             
             var results = response;
             var resultsDic = results[0].shortdef;
-            console.log(resultsDic);
+            // console.log(resultsDic);
 
             $("#oxford").append(resultsDic);
             
