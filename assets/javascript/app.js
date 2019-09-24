@@ -46,7 +46,18 @@ $("#search").on("click", function(event) {
             
         });
         
-        
+        //$("#gifs").empty()
+
+    $.ajax({
+        url: giphyUrl,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+      
+        var results = response.data;
+        var gif = $("#giphy-image").append(results.images.fixed_height);
+         
+    })
 
         
 
