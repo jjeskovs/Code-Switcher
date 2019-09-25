@@ -35,6 +35,10 @@ var search = $("#icon_prefix").val().trim()
 		$("#giphy-image").attr("src", "");
 	    $("#output").show();
 		search = $("#icon_prefix").val().trim()
+
+		if (search === "") {
+			alert("please enter a word")
+		} else {
 		// console.log(search)
 		var settings = {
 			"async": true,
@@ -98,6 +102,7 @@ var search = $("#icon_prefix").val().trim()
 			$("#icon_prefix").val("");
 			
 		})
+	}
 	})
 		
 		
