@@ -2,6 +2,8 @@ $("#search-form").submit(function (event) {
 	$("#urban").empty();
 	$("#oxford").empty();
 	$("#giphy-image").attr("src", "");
+
+	console.log(event);
 	
 	
 	event.preventDefault();
