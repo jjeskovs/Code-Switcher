@@ -19,3 +19,21 @@ body {
     padding: 15px;
     border-radius: 3px;
 }
+
+.card-title {
+  text-align: center;
+  
+}
+#oxford, #urban {
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 65px;
+}
+li {
+  text-align: center;
+}
+#recent-search {
+  text-align: center;
+}
