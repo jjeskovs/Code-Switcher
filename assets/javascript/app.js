@@ -61,8 +61,8 @@ var search = $("#icon_prefix").val().trim()
 			// console.log(definitionWord)
 			var word = results[0].word
 			
-			definitionDiv.append("<h4>"  + word + "</h4>")
-			definitionDiv.append("<h5>" + definitionWord + "</h5>")
+			definitionDiv.append(word)
+			definitionDiv.append(definitionWord)
 			$("#urban").append(definitionDiv)
 
 		});
@@ -95,11 +95,18 @@ var search = $("#icon_prefix").val().trim()
 			
 			var result = response.data;
 			var resultUrl = result[0].images.fixed_height.url;
+			var notFound = "https://media.giphy.com/media/IHOOMIiw5v9VS/giphy.gif" ;
 			// console.log(resultUrl);
 			
 			$("#giphy-image").attr("src", resultUrl);
 			
 			$("#icon_prefix").val("");
+
+			// if(resultUrl === ""){
+			// 	$("#giphy-image").attr("src", notFound)	
+			// } else {
+			// 	$("#giphy-image").attr("src", resultUrl)
+			// }
 			
 		})
 	}
