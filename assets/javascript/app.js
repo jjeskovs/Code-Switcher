@@ -35,6 +35,10 @@ var search = $("#icon_prefix").val().trim()
 		$("#giphy-image").attr("src", "");
 	    $("#output").show();
 		search = $("#icon_prefix").val().trim()
+
+		if (search === "") {
+			$("<h6>" + "Please choose a word to continue" + "</h6>").modal()
+		} else {
 		// console.log(search)
 		var settings = {
 			"async": true,
@@ -97,14 +101,9 @@ var search = $("#icon_prefix").val().trim()
 			$("#giphy-image").attr("src", resultUrl);
 			
 			$("#icon_prefix").val("");
-
-			// if(resultUrl === ""){
-			// 	$("#giphy-image").attr("src", notFound)	
-			// } else {
-			// 	$("#giphy-image").attr("src", resultUrl)
-			// }
 			
 		})
+	}
 	})
 		
 		
