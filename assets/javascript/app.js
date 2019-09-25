@@ -97,14 +97,18 @@ var search = $("#icon_prefix").val().trim()
 			//console.log(response.data[0].images.fixed_height.url);
 			
 			var result = response.data;
-			var resultUrl = result[0].images.fixed_height.url;
-			var notFound = "https://media.giphy.com/media/IHOOMIiw5v9VS/giphy.gif" ;
+			var giphy = "";
 			// console.log(resultUrl);
+			if (result.length !== 0) {
+				giphy = result[0].images.fixed_height.url;
+			} else {
+				giphy = "https://media.giphy.com/media/IHOOMIiw5v9VS/giphy.gif";
+			}
+
+				$("#giphy-image").attr("src", giphy);
 			
-			$("#giphy-image").attr("src", resultUrl);
-			
-			$("#icon_prefix").val("");
-			
+			//$("#icon_prefix").val("");
+			//var notFound = "https://media.giphy.com/media/IHOOMIiw5v9VS/giphy.gif";
 		})
 	}
 	})
