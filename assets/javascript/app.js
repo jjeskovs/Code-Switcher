@@ -33,7 +33,7 @@ var search = $("#icon_prefix").val().trim()
 		$("#urban").empty();
 		$("#oxford").empty();
 		$("#giphy-image").attr("src", "");
-	
+	    $("#output").show();
 		search = $("#icon_prefix").val().trim()
 		// console.log(search)
 		var settings = {
@@ -45,6 +45,7 @@ var search = $("#icon_prefix").val().trim()
 				"x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
 				"x-rapidapi-key": "2b790bbd2amshc926815e536ecbep1b9bb5jsn68a7524edf49"
 			}
+
 		}
 		
 		$.ajax(settings).then(function (response) {
@@ -59,6 +60,7 @@ var search = $("#icon_prefix").val().trim()
 			definitionDiv.append("<h4>"  + word + "</h4>")
 			definitionDiv.append("<h5>" + definitionWord + "</h5>")
 			$("#urban").append(definitionDiv)
+
 		});
 		
         
