@@ -61,7 +61,7 @@ var search = $("#icon_prefix").val().trim()
 			// console.log(definitionWord)
 			var word = results[0].word
 			if (!definitionWord){
-				$("#oxford").append("<img src = 'assets/images/nothing.png' style='width:225px'/>");
+				$("#urban").append("<img src = 'assets/images/nothing.png' style='width:225px'/>");
 			}
 
 			definitionDiv.append(word)

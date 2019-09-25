@@ -54,4 +54,9 @@ li {
   overflow: hidden;
   text-align: center;
   font-weight: bolder; 
+
+}
+
+.modal { 
+	overflow: visible; 
 }
