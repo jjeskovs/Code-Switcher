@@ -35,6 +35,10 @@ var search = $("#icon_prefix").val().trim()
 		$("#giphy-image").attr("src", "");
 	    $("#output").show();
 		search = $("#icon_prefix").val().trim()
+
+		if (search === "") {
+			$("<h6>" + "Please choose a word to continue" + "</h6>").modal()
+		} else {
 		// console.log(search)
 		var settings = {
 			"async": true,
@@ -56,7 +60,10 @@ var search = $("#icon_prefix").val().trim()
 			var definitionWord = results[0].definition
 			// console.log(definitionWord)
 			var word = results[0].word
-			
+			if (!definitionWord){
+				$("#oxford").append("<img src = 'assets/images/nothing.png' style='width:225px'/>");
+			}
+
 			definitionDiv.append(word)
 			definitionDiv.append(definitionWord)
 			$("#urban").append(definitionDiv)
@@ -75,8 +82,10 @@ var search = $("#icon_prefix").val().trim()
             
             var results = response;
             var resultsDic = results[0].shortdef;
-            // console.log(resultsDic);
-			
+            console.log(resultsDic);
+			if (!resultsDic){
+				$("#oxford").append("<img src = 'assets/images/nothing.png' style='width:225px'/>");
+			}
             $("#oxford").append(resultsDic);
             
 		});
@@ -90,21 +99,20 @@ var search = $("#icon_prefix").val().trim()
 			//console.log(response.data[0].images.fixed_height.url);
 			
 			var result = response.data;
-			var resultUrl = result[0].images.fixed_height.url;
-			var notFound = "https://media.giphy.com/media/IHOOMIiw5v9VS/giphy.gif" ;
+			var giphy = "";
 			// console.log(resultUrl);
-			
-			$("#giphy-image").attr("src", resultUrl);
-			
-			$("#icon_prefix").val("");
+			if (result.length !== 0) {
+				giphy = result[0].images.fixed_height.url;
+			} else {
+				giphy = "https://media.giphy.com/media/IHOOMIiw5v9VS/giphy.gif";
+			}
 
-			// if(resultUrl === ""){
-			// 	$("#giphy-image").attr("src", notFound)	
-			// } else {
-			// 	$("#giphy-image").attr("src", resultUrl)
-			// }
+				$("#giphy-image").attr("src", giphy);
 			
+			//$("#icon_prefix").val("");
+			//var notFound = "https://media.giphy.com/media/IHOOMIiw5v9VS/giphy.gif";
 		})
+	}
 	})
 		
 		

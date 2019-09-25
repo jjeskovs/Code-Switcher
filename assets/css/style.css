@@ -49,3 +49,9 @@ li {
 #recent-search {
   text-align: center;
 }
+
+.modal {
+  overflow: hidden;
+  text-align: center;
+  font-weight: bolder; 
+}
