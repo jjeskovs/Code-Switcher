@@ -59,12 +59,10 @@ var search = $("#icon_prefix").val().trim()
 			var definitionDiv = $("<div>")
 			var definitionWord = results[0].definition
 			// console.log(definitionWord)
-			var word = results[0].word
-			if (!definitionWord){
+			if (!definitionDiv){
 				$("#urban").append("<img src = 'assets/images/nothing.png' style='width:225px'/>");
 			}
 
-			definitionDiv.append(word)
 			definitionDiv.append(definitionWord)
 			$("#urban").append(definitionDiv)
 
