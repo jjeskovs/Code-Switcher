@@ -37,7 +37,7 @@ var search = $("#icon_prefix").val().trim()
 		search = $("#icon_prefix").val().trim()
 
 		if (search === "") {
-			alert("please enter a word")
+			$("<h6>" + "Please choose a word to continue" + "</h6>").modal()
 		} else {
 		// console.log(search)
 		var settings = {
@@ -101,12 +101,6 @@ var search = $("#icon_prefix").val().trim()
 			$("#giphy-image").attr("src", resultUrl);
 			
 			$("#icon_prefix").val("");
-
-			// if(resultUrl === ""){
-			// 	$("#giphy-image").attr("src", notFound)	
-			// } else {
-			// 	$("#giphy-image").attr("src", resultUrl)
-			// }
 			
 		})
 	}
