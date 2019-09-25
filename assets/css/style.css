@@ -2,6 +2,7 @@
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
 	font-size: inherit;
 }
@@ -13,13 +14,12 @@ body {
 #search {
    border-radius: 5px;
 }
+
 #output {
   display: none;
-  
 }
 
 #output .card-content {
-
   overflow-y: auto;
 }
 
@@ -29,7 +29,23 @@ body {
     border-radius: 3px;
   }
 
-#recent {
 
-  text-align: inherit;
+.card-title {
+  text-align: center;
+}
+
+#oxford, #urban {
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 65px;
+}
+
+li {
+  text-align: center;
+}
+
+#recent-search {
+  text-align: center;
 }

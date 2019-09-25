@@ -57,8 +57,8 @@ var search = $("#icon_prefix").val().trim()
 			// console.log(definitionWord)
 			var word = results[0].word
 			
-			definitionDiv.append("<h4>"  + word + "</h4>")
-			definitionDiv.append("<h5>" + definitionWord + "</h5>")
+			definitionDiv.append(word)
+			definitionDiv.append(definitionWord)
 			$("#urban").append(definitionDiv)
 
 		});
