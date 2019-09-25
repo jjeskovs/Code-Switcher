@@ -22,7 +22,7 @@
                 <form id="search-form" class="col s12">
                     <div class="input-field col s12">
                         <input id="icon_prefix" type="text" class="validate">
-                        <a id="search" class="waves-effect waves-teal btn-flat" type="submit" name="action">Search</a>
+                        <button id="search" class="waves-effect waves-teal btn-flat" type="submit" name="action">Search</button>
                         <label for="icon_prefix">Search</label>
                     </div>
                 </form>
@@ -90,11 +90,7 @@
                 </div>
                 <div class="col l3 s12">
                     <h5 class="black-text">Recent Searches</h5>
-                    <ul>
-                        <li><a class="black-text" href="#!">Link 1</a></li>
-                        <li><a class="black-text" href="#!">Link 2</a></li>
-                        <li><a class="black-text" href="#!">Link 3</a></li>
-                        <li><a class="black-text" href="#!">Link 4</a></li>
+                    <ul id="recent">
                     </ul>
                 </div>
             </div>
@@ -108,6 +104,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-database.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
