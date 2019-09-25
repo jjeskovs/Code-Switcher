@@ -60,7 +60,10 @@ var search = $("#icon_prefix").val().trim()
 			var definitionWord = results[0].definition
 			// console.log(definitionWord)
 			var word = results[0].word
-			
+			if (!definitionWord){
+				$("#oxford").append("<img src = 'assets/images/nothing.png' style='width:225px'/>");
+			}
+
 			definitionDiv.append(word)
 			definitionDiv.append(definitionWord)
 			$("#urban").append(definitionDiv)
@@ -79,8 +82,10 @@ var search = $("#icon_prefix").val().trim()
             
             var results = response;
             var resultsDic = results[0].shortdef;
-            // console.log(resultsDic);
-			
+            console.log(resultsDic);
+			if (!resultsDic){
+				$("#oxford").append("<img src = 'assets/images/nothing.png' style='width:225px'/>");
+			}
             $("#oxford").append(resultsDic);
             
 		});
