@@ -10,12 +10,12 @@ body {
     background: #333;
 }
 
+#output {
+  display: none;
+}
+
 #search-form {
     background: #FFF;
     padding: 15px;
     border-radius: 3px;
-}
-
-#giphy-image {
-  
 }
