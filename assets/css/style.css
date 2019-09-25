@@ -10,6 +10,9 @@ body {
     background: #333;
 }
 
+#search {
+   border-radius: 5px;
+}
 #output {
   display: none;
 }
@@ -18,4 +21,9 @@ body {
     background: #FFF;
     padding: 15px;
     border-radius: 3px;
+  }
+
+#recent {
+
+  text-align: inherit;
 }
