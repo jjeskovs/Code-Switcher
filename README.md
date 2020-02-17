@@ -6,6 +6,10 @@
 
 The purpose and thought process behind making The Code Switcher simply was for entertainment purposes. It can be a great way to kill time and have a good laugh.
 
+The live version of the app can be accessed by clicking the link below:
+
+https://github.com/jjeskovs/Code-Switcher.git
+
 ## How Code Switcher works:
 
 ---
